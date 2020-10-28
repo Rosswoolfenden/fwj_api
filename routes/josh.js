@@ -10,9 +10,14 @@ router.get('/turnOff', turnOf);
 
 async function turnOn(ctx) {
     try {
-        await plugs.turnAllPlugsOn();
-        ctx.body = {suc: "This worked"}
+        
+        console.log('this worked');
+        
+        
+        ctx.body = await plugs.turnAllPlugsOn();
     } catch (e) {
+        console.log('this worked');
+
         ctx.body = {error: 'did not work '}
     }
     ctx.body = {succsess: 'This worked, well done'};
@@ -20,9 +25,11 @@ async function turnOn(ctx) {
 
 async function turnOf(ctx) {
     try {
-        await plugs.turnAllPlugsOff();
-        ctx.body = {suc: "This worked"}
+        
+        console.log('this worked');
+        ctx.body = await plugs.turnAllPlugsOff();
     } catch (e) {
+        console.log('this did not work')
         ctx.body = {error: 'did not work '}
     }
 }

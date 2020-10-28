@@ -1,4 +1,4 @@
-const Koa = require('Koa');
+const Koa = require('koa');
 const app = new Koa();
 const j = require('./routes/josh');
 const tplinkplug = require('./devices/controller');

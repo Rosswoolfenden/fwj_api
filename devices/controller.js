@@ -39,13 +39,14 @@ exports.getAllDevices = function() {
 }
 
 exports.turnAllPlugsOn = function (plugud) {
-
+    console.log(plugs.length);
     const plug = plugs[0];
     try {
         plug.setPowerState(true);
         // todo return plug name 
         return ({Success: "Turned on inser"})
     } catch (err) {
+        console.log("This did not work");
         return ({Error: "Failed to turn on #insert name#"})
     } 
 }
@@ -57,10 +58,13 @@ exports.ison = async function () {
 }
 // todo - sort out the repsonse 
 exports.turnAllPlugsOff = function() {
+    console.log(plugs.length);
     const plug = plugs[0];
     try {
         plug.setPowerState(false);
+        return ({Success: "Turned on inser"})
     } catch (err) {
+        return({Errror: "faied to turn plug off"});
     }
 }
  
